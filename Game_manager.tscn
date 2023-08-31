@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://spacepixels-0.1.0/background-blue.png" type="Texture" id=2]
+[ext_resource path="res://spacepixels-0.1.0/horizontal_bar_red.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 199.522, 8.39712 )
+
+[node name="Gamemanager" type="Node2D"]
+position = Vector2( -1, 0 )
+
+[node name="Background-blue" type="Sprite" parent="."]
+position = Vector2( 201, 304 )
+scale = Vector2( 1, 1.495 )
+texture = ExtResource( 2 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 197, 547 )
+scale = Vector2( 1, 1.495 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 198, 465 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="HorizontalBarRed" type="Sprite" parent="Area2D"]
+position = Vector2( 2.62503, 0 )
+scale = Vector2( 3.08269, 1.6 )
+texture = ExtResource( 3 )
